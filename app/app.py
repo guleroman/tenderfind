@@ -8,7 +8,7 @@ import yaml
 
 
 config_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir, 'config.yml'))
-config = yaml.full_load(open(config_path))
+config = yaml.load(open(config_path))
 app = Flask(__name__)
 app.config.update(config)
 logger = logging.getLogger(__name__)

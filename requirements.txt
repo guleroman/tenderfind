@@ -21,3 +21,4 @@ pymorphy2
 pandas
 gunicorn
 gevent
+xlrd
