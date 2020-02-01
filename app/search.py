@@ -105,6 +105,23 @@ def get_similar_tovar(text):
             similar_tovar_id.append(i[0])
     #return(data_2['Наименование'][idd])
     for id_ in similar_tovar_id:
-        similar_tovar.append(data[data['Id'] == id_ ].to_dict())
+        similar_tovar.append({"Id":str(data[data['Id'] == id_]['Id'].values[0]).replace("nan","-1"),
+         "Наименование":str(data[data['Id'] == id_]['Наменование'].values[0]).replace("nan","-1"),
+         "Производитель":str(data[data['Id'] == id_]['Производитель'].values[0]).replace("nan","-1"),
+         "Страна происхождения":str(data[data['Id'] == id_]['Страна происхождения'].values[0]).replace("nan","-1"),
+         "Вид продукции":str(data[data['Id'] == id_]['Вид продукции'].values[0]).replace("nan","-1"),
+         "Вид товаров":str(data[data['Id'] == id_]['Вид товаров'].values[0]).replace("nan","-1"),
+         "Длина":str(data[data['Id'] == id_]['Длина'].values[0]).replace("nan","-1"),
+         "Ширина":str(data[data['Id'] == id_]['Ширина'].values[0]).replace("nan","-1"),
+         "Высота":str(data[data['Id'] == id_]['Высота'].values[0]).replace("nan","-1"),
+         "Материал":str(data[data['Id'] == id_]['Материал'].values[0]).replace("nan","-1"),
+         "Диаметр":str(data[data['Id'] == id_]['Диаметр'].values[0]).replace("nan","-1"),
+         "Гарантийный срок":str(data[data['Id'] == id_]['Гарантийный срок'].values[0]).replace("nan","-1"),
+         "Цвет":str(data[data['Id'] == id_]['Цвет'].values[0]).replace("nan","-1"),
+         "Вес":str(data[data['Id'] == id_]['Вес'].values[0]).replace("nan","-1"),
+         "Объем":str(data[data['Id'] == id_]['Объем'].values[0]).replace("nan","-1"),
+         "Количество действующих оферт":str(data[data['Id'] == id_]['Количество действующих оферт'].values[0]).replace("nan","-1"),
+         "Сумма в составе контрактов":str(data[data['Id'] == id_]['Сумма в составе контрактов'].values[0]).replace("nan","-1"),
+         "Количество контрактов":str(data[data['Id'] == id_]['Количество контрактов'].values[0]).replace("nan","-1")})
     print("--- %s seconds ---" % (time.time() - start_time))
     return (similar_tovar)    

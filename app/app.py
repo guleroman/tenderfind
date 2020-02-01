@@ -5,13 +5,15 @@ import os
 from flask import Flask, jsonify, request, json, make_response
 from search import get_similar_tovar
 import yaml
-
+from flask_cors import CORS, cross_origin
 
 config_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir, 'config.yml'))
 config = yaml.load(open(config_path))
+
 app = Flask(__name__)
 app.config.update(config)
 logger = logging.getLogger(__name__)
+CORS(app)
 
 formatter = logging.Formatter('%(asctime)s:%(levelname)s:%(message)s')
 file_handler = logging.FileHandler(app.config['LOGFILE'])
@@ -29,6 +31,7 @@ logger = set_logger(logger)
 
 
 @app.route('/api/v1/themes/',methods=['POST'])
+@cross_origin(origins="*", methods=['POST','OPTIONS'], allow_headers="*")
 def task_processing_themes_processing():
     try:
         req = json.loads(request.data)
@@ -37,7 +40,7 @@ def task_processing_themes_processing():
 
     result = get_similar_tovar(req['text'])
     resp = make_response(jsonify({"result":result})) 
-    resp.headers['Access-Control-Allow-Origin'] = '*'
+    #resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
 
     # if processing_result['_status_code'] != 200: 
