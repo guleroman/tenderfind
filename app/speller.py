@@ -5,7 +5,7 @@ def Speller(stroke):
         if type(stroke) is list:
             stroke = " ".join(stroke)
         status = 200
-        params = {'text': f"{stroke}", 'lang':"rus"}
+        params = {'text': stroke, 'lang':"rus"}
         r = requests.get('http://speller.yandex.net/services/spellservice.json/checkText', params=params)
         data = r.json()
         for co in data:
@@ -22,7 +22,7 @@ def Sinonims(query):
         if type(query) is list:
             query = " ".join(query)
         status = 200
-        params = {'text': f"{query}", 'lang':"ru-ru","key":"dict.1.1.20180822T091221Z.f831c0a5a638825e.290baebf00efbd973a2273af5a197d0addcef9f3"}
+        params = {'text': query, 'lang':"ru-ru","key":"dict.1.1.20180822T091221Z.f831c0a5a638825e.290baebf00efbd973a2273af5a197d0addcef9f3"}
         r = requests.get('https://dictionary.yandex.net/api/v1/dicservice.json/lookup', params=params)
         data = r.json()
         sinonims.append(query)

@@ -3,7 +3,7 @@ import requests
 import os
 
 from flask import Flask, jsonify, request, json, make_response
-from search import get_similar_tovar
+from search import get_similar_tovar, get_similar_tovar_v2
 import yaml
 from flask_cors import CORS, cross_origin
 
@@ -35,20 +35,47 @@ logger = set_logger(logger)
 def task_processing_themes_processing():
     try:
         req = json.loads(request.data)
+        get_text = req['text']
     except:
         return make_response(jsonify({"_status_code":422,"error":{"info":"incorrect POST-request"}}),422)
 
-    result = get_similar_tovar(req['text'])
+    try:
+        class_p = req['class_p']
+    except:
+        class_p = None
+    
+    try:
+        class_t = req['class_t']
+    except:
+        class_t = None
+    
+    result = get_similar_tovar(class_p=class_p, class_t=class_t, text = get_text)
+    resp = make_response(jsonify({"result":result}))
+    return resp
+
+@app.route('/api/v2/themes/',methods=['POST'])
+@cross_origin(origins="*", methods=['POST','OPTIONS'], allow_headers="*")
+def task_processing_themes_processing_v2():
+    try:
+        req = json.loads(request.data)
+        get_text = req['text']
+    except:
+        return make_response(jsonify({"_status_code":422,"error":{"info":"incorrect POST-request"}}),422)
+
+    try:
+        class_p = req['class_p']
+    except:
+        class_p = None
+    
+    try:
+        class_t = req['class_t']
+    except:
+        class_t = None
+    
+    result = get_similar_tovar_v2(class_p=class_p, class_t=class_t, text = get_text)
     resp = make_response(jsonify({"result":result})) 
     #resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp
-
-    # if processing_result['_status_code'] != 200: 
-    #     return make_response(jsonify(processing_result['error']), processing_result['_status_code'])
-    # elif processing_result['_status_code'] == 200:
-    #     resp = make_response(jsonify({"result":processing_result["themes"]})) 
-    #     resp.headers['Access-Control-Allow-Origin'] = '*'
-    #     return resp
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7777)

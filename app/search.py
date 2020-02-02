@@ -84,7 +84,7 @@ def get_tags(text):
     bigrams = " ".join(bigrams)
     return(set((tags + " " + bigrams).split()))
 
-def get_similar_tovar(text):
+def get_similar_tovar(class_p=None,class_t=None,text=None):
     start_time = time.time()
     some = {}
     similar_tovar_id = []
@@ -92,6 +92,7 @@ def get_similar_tovar(text):
     newset = list(data_2['tag_1'])
     data_id = list(data_2['Id'])
     similar_tovar = []
+    similar_tovar_final = []
     for i in range(len(data_2)):
         try:
             some.update({data_id[i]:len(newset[i] & text_set)})
@@ -104,6 +105,7 @@ def get_similar_tovar(text):
         if i[1]>0:
             similar_tovar_id.append(i[0])
     #return(data_2['Наименование'][idd])
+    
     for id_ in similar_tovar_id:
         similar_tovar.append({"Id":str(data[data['Id'] == id_]['Id'].values[0]).replace("nan","-1"),
          "Наименование":str(data[data['Id'] == id_]['Наменование'].values[0]).replace("nan","-1"),
@@ -123,5 +125,66 @@ def get_similar_tovar(text):
          "Количество действующих оферт":str(data[data['Id'] == id_]['Количество действующих оферт'].values[0]).replace("nan","-1"),
          "Сумма в составе контрактов":str(data[data['Id'] == id_]['Сумма в составе контрактов'].values[0]).replace("nan","-1"),
          "Количество контрактов":str(data[data['Id'] == id_]['Количество контрактов'].values[0]).replace("nan","-1")})
+    similar_tovar = filters(class_p=class_p, class_t=class_t, similar_tovar = similar_tovar)
+    for id_ in similar_tovar['Id']:
+        similar_tovar_final.append({"Id":str(similar_tovar[similar_tovar['Id'] == id_]['Id'].values[0]).replace("nan","-1"),
+         "Наименование":str(similar_tovar[similar_tovar['Id'] == id_]['Наименование'].values[0]).replace("nan","-1"),
+         "Производитель":str(similar_tovar[similar_tovar['Id'] == id_]['Производитель'].values[0]).replace("nan","-1"),
+         "Страна происхождения":str(similar_tovar[similar_tovar['Id'] == id_]['Страна происхождения'].values[0]).replace("nan","-1"),
+         "Вид продукции":str(similar_tovar[similar_tovar['Id'] == id_]['Вид продукции'].values[0]).replace("nan","-1"),
+         "Вид товаров":str(similar_tovar[similar_tovar['Id'] == id_]['Вид товаров'].values[0]).replace("nan","-1"),
+         "Длина":str(similar_tovar[similar_tovar['Id'] == id_]['Длина'].values[0]).replace("nan","-1"),
+         "Ширина":str(similar_tovar[similar_tovar['Id'] == id_]['Ширина'].values[0]).replace("nan","-1"),
+         "Высота":str(similar_tovar[similar_tovar['Id'] == id_]['Высота'].values[0]).replace("nan","-1"),
+         "Материал":str(similar_tovar[similar_tovar['Id'] == id_]['Материал'].values[0]).replace("nan","-1"),
+         "Диаметр":str(similar_tovar[similar_tovar['Id'] == id_]['Диаметр'].values[0]).replace("nan","-1"),
+         "Гарантийный срок":str(similar_tovar[similar_tovar['Id'] == id_]['Гарантийный срок'].values[0]).replace("nan","-1"),
+         "Цвет":str(similar_tovar[similar_tovar['Id'] == id_]['Цвет'].values[0]).replace("nan","-1"),
+         "Вес":str(similar_tovar[similar_tovar['Id'] == id_]['Вес'].values[0]).replace("nan","-1"),
+         "Объем":str(similar_tovar[similar_tovar['Id'] == id_]['Объем'].values[0]).replace("nan","-1"),
+         "Количество действующих оферт":str(similar_tovar[similar_tovar['Id'] == id_]['Количество действующих оферт'].values[0]).replace("nan","-1"),
+         "Сумма в составе контрактов":str(similar_tovar[similar_tovar['Id'] == id_]['Сумма в составе контрактов'].values[0]).replace("nan","-1"),
+         "Количество контрактов":str(similar_tovar[similar_tovar['Id'] == id_]['Количество контрактов'].values[0]).replace("nan","-1")})
     print("--- %s seconds ---" % (time.time() - start_time))
-    return (similar_tovar)    
+    return (similar_tovar_final)
+
+def filters(class_p=None,class_t=None,similar_tovar=None):
+    table = pd.DataFrame(pd.Series(similar_tovar[0])).T
+    for i in range(1,len(similar_tovar[1:])):
+        table.loc[i] = pd.Series(similar_tovar[i])
+    if class_p != None:
+        table = table[table['Вид продукции'].isin([class_p])]
+    elif class_t != None:
+        table = table[table['Вид товаров'].isin([class_t])]
+    return(table)
+
+def get_similar_tovar_v2(class_p=None,class_t=None,text=None):
+    start_time = time.time()
+    some = {}
+    similar_tovar_id = []
+    text_set = get_tags(f'{text}')
+    newset = list(data_2['tag_1'])
+    data_id = list(data_2['Id'])
+    for i in range(len(data_2)):
+        try:
+            some.update({data_id[i]:len(newset[i] & text_set)})
+        except:
+            some.update({data_id[i]:0})
+    ids = sorted(some.items(),key=operator.itemgetter(1),reverse=True)
+    for i in ids:
+        if i[1]>0:
+            similar_tovar_id.append(i[0])
+    #return(data_2['Наименование'][idd])
+    similar_tovar = data[data['Id'].isin(similar_tovar_id)]
+    my_class_p = Counter(similar_tovar['Вид продукции'].values)
+    my_class_t = Counter(similar_tovar['Вид товаров'].values)
+    
+    my_class_p = sorted(my_class_p,key=my_class_p.get,reverse=True)
+    my_class_t = sorted(my_class_t,key=my_class_t.get,reverse=True)
+    
+    if class_p != None:
+        similar_tovar = similar_tovar[similar_tovar['Вид продукции'].isin([class_p])]
+    elif class_t != None:
+        similar_tovar = similar_tovar[similar_tovar['Вид товаров'].isin([class_t])]
+    print("--- %s seconds ---" % (time.time() - start_time))
+    return({"class_p":my_class_p,"class_t":my_class_t,"payload":similar_tovar.fillna('-1').to_dict("records")})
