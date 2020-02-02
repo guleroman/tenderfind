@@ -481,3 +481,264 @@ KeyError: 'texts'
 [2020-02-02 12:00:25 +0000] [16] [INFO] Booting worker with pid: 16
 [2020-02-02 12:00:25 +0000] [17] [INFO] Booting worker with pid: 17
 [2020-02-02 12:00:25 +0000] [18] [INFO] Booting worker with pid: 18
+[2020-02-02 12:24:21 +0000] [18] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:24:21 +0000] [18] [INFO] Worker exiting (pid: 18)
+[2020-02-02 12:24:22 +0000] [16] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:24:22 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2020-02-02 12:24:22 +0000] [17] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:24:22 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2020-02-02 12:24:22 +0000] [22] [INFO] Booting worker with pid: 22
+[2020-02-02 12:24:23 +0000] [24] [INFO] Booting worker with pid: 24
+[2020-02-02 12:24:23 +0000] [25] [INFO] Booting worker with pid: 25
+[2020-02-02 12:32:34 +0000] [24] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:32:34 +0000] [25] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:32:34 +0000] [25] [INFO] Worker exiting (pid: 25)
+[2020-02-02 12:32:34 +0000] [24] [INFO] Worker exiting (pid: 24)
+[2020-02-02 12:32:34 +0000] [22] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:32:34 +0000] [22] [INFO] Worker exiting (pid: 22)
+[2020-02-02 12:32:35 +0000] [26] [INFO] Booting worker with pid: 26
+[2020-02-02 12:32:35 +0000] [27] [INFO] Booting worker with pid: 27
+[2020-02-02 12:32:35 +0000] [28] [INFO] Booting worker with pid: 28
+[2020-02-02 12:34:07 +0000] [26] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:34:07 +0000] [26] [INFO] Worker exiting (pid: 26)
+[2020-02-02 12:34:07 +0000] [27] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:34:07 +0000] [27] [INFO] Worker exiting (pid: 27)
+[2020-02-02 12:34:08 +0000] [28] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:34:08 +0000] [28] [INFO] Worker exiting (pid: 28)
+[2020-02-02 12:34:08 +0000] [29] [INFO] Booting worker with pid: 29
+[2020-02-02 12:34:08 +0000] [30] [INFO] Booting worker with pid: 30
+[2020-02-02 12:34:09 +0000] [31] [INFO] Booting worker with pid: 31
+[2020-02-02 12:41:12 +0000] [9] [INFO] Starting gunicorn 20.0.4
+[2020-02-02 12:41:12 +0000] [9] [INFO] Listening at: http://0.0.0.0:7777 (9)
+[2020-02-02 12:41:12 +0000] [9] [INFO] Using worker: gevent
+[2020-02-02 12:41:12 +0000] [16] [INFO] Booting worker with pid: 16
+[2020-02-02 12:41:12 +0000] [17] [INFO] Booting worker with pid: 17
+[2020-02-02 12:41:12 +0000] [18] [INFO] Booting worker with pid: 18
+[2020-02-02 12:43:22 +0000] [18] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:43:22 +0000] [18] [INFO] Worker exiting (pid: 18)
+[2020-02-02 12:43:23 +0000] [16] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:43:23 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2020-02-02 12:43:23 +0000] [17] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:43:23 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2020-02-02 12:43:23 +0000] [20] [INFO] Booting worker with pid: 20
+[2020-02-02 12:43:24 +0000] [21] [INFO] Booting worker with pid: 21
+[2020-02-02 12:43:24 +0000] [22] [INFO] Booting worker with pid: 22
+[2020-02-02 12:45:04 +0000] [9] [INFO] Starting gunicorn 20.0.4
+[2020-02-02 12:45:04 +0000] [9] [INFO] Listening at: http://0.0.0.0:7777 (9)
+[2020-02-02 12:45:04 +0000] [9] [INFO] Using worker: gevent
+[2020-02-02 12:45:04 +0000] [16] [INFO] Booting worker with pid: 16
+[2020-02-02 12:45:04 +0000] [17] [INFO] Booting worker with pid: 17
+[2020-02-02 12:45:04 +0000] [18] [INFO] Booting worker with pid: 18
+[2020-02-02 12:45:13 +0000] [17] [ERROR] Error handling request /api/v2/preds/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/app/app/app.py", line 92, in task_processing_themes_processing_v3
+    result = get_preds(text)
+NameError: name 'text' is not defined
+[2020-02-02 12:45:26 +0000] [18] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:45:26 +0000] [18] [INFO] Worker exiting (pid: 18)
+[2020-02-02 12:45:26 +0000] [16] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:45:26 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2020-02-02 12:45:26 +0000] [17] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:45:26 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2020-02-02 12:45:27 +0000] [19] [INFO] Booting worker with pid: 19
+[2020-02-02 12:45:27 +0000] [21] [INFO] Booting worker with pid: 21
+[2020-02-02 12:45:27 +0000] [22] [INFO] Booting worker with pid: 22
+[2020-02-02 12:46:09 +0000] [19] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:46:09 +0000] [19] [INFO] Worker exiting (pid: 19)
+[2020-02-02 12:46:09 +0000] [22] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:46:09 +0000] [22] [INFO] Worker exiting (pid: 22)
+[2020-02-02 12:46:09 +0000] [21] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 12:46:09 +0000] [21] [INFO] Worker exiting (pid: 21)
+[2020-02-02 12:46:10 +0000] [25] [INFO] Booting worker with pid: 25
+[2020-02-02 12:46:10 +0000] [26] [INFO] Booting worker with pid: 26
+[2020-02-02 12:46:10 +0000] [27] [INFO] Booting worker with pid: 27
+[2020-02-02 12:46:28 +0000] [26] [ERROR] Error handling request /api/v2/preds/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/app/app/app.py", line 92, in task_processing_themes_processing_v3
+    result = get_preds(get_text)
+NameError: name 'text' is not defined
+[2020-02-02 12:47:30 +0000] [11] [INFO] Starting gunicorn 20.0.4
+[2020-02-02 12:47:30 +0000] [11] [INFO] Listening at: http://0.0.0.0:7777 (11)
+[2020-02-02 12:47:30 +0000] [11] [INFO] Using worker: gevent
+[2020-02-02 12:47:30 +0000] [18] [INFO] Booting worker with pid: 18
+[2020-02-02 12:47:30 +0000] [19] [INFO] Booting worker with pid: 19
+[2020-02-02 12:47:30 +0000] [20] [INFO] Booting worker with pid: 20
+[2020-02-02 12:53:34 +0000] [20] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:53:34 +0000] [20] [INFO] Worker exiting (pid: 20)
+[2020-02-02 12:53:35 +0000] [18] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:53:35 +0000] [18] [INFO] Worker exiting (pid: 18)
+[2020-02-02 12:53:35 +0000] [19] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:53:35 +0000] [19] [INFO] Worker exiting (pid: 19)
+[2020-02-02 12:53:35 +0000] [21] [INFO] Booting worker with pid: 21
+[2020-02-02 12:53:36 +0000] [22] [INFO] Booting worker with pid: 22
+[2020-02-02 12:53:36 +0000] [23] [INFO] Booting worker with pid: 23
+[2020-02-02 12:55:15 +0000] [9] [INFO] Starting gunicorn 20.0.4
+[2020-02-02 12:55:15 +0000] [9] [INFO] Listening at: http://0.0.0.0:7777 (9)
+[2020-02-02 12:55:15 +0000] [9] [INFO] Using worker: gevent
+[2020-02-02 12:55:15 +0000] [16] [INFO] Booting worker with pid: 16
+[2020-02-02 12:55:15 +0000] [17] [INFO] Booting worker with pid: 17
+[2020-02-02 12:55:15 +0000] [18] [INFO] Booting worker with pid: 18
+[2020-02-02 12:55:34 +0000] [16] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:55:34 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2020-02-02 12:55:34 +0000] [17] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:55:34 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2020-02-02 12:55:34 +0000] [18] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:55:34 +0000] [18] [INFO] Worker exiting (pid: 18)
+[2020-02-02 12:55:35 +0000] [19] [INFO] Booting worker with pid: 19
+[2020-02-02 12:55:35 +0000] [20] [INFO] Booting worker with pid: 20
+[2020-02-02 12:55:36 +0000] [21] [INFO] Booting worker with pid: 21
+[2020-02-02 12:55:42 +0000] [19] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:55:42 +0000] [19] [INFO] Worker exiting (pid: 19)
+[2020-02-02 12:55:42 +0000] [20] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:55:42 +0000] [20] [INFO] Worker exiting (pid: 20)
+[2020-02-02 12:55:42 +0000] [21] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 12:55:42 +0000] [21] [INFO] Worker exiting (pid: 21)
+[2020-02-02 12:55:43 +0000] [22] [INFO] Booting worker with pid: 22
+[2020-02-02 12:55:43 +0000] [23] [INFO] Booting worker with pid: 23
+[2020-02-02 12:55:43 +0000] [24] [INFO] Booting worker with pid: 24
+[2020-02-02 12:56:58 +0000] [9] [INFO] Starting gunicorn 20.0.4
+[2020-02-02 12:56:58 +0000] [9] [INFO] Listening at: http://0.0.0.0:7777 (9)
+[2020-02-02 12:56:58 +0000] [9] [INFO] Using worker: gevent
+[2020-02-02 12:56:59 +0000] [16] [INFO] Booting worker with pid: 16
+[2020-02-02 12:56:59 +0000] [17] [INFO] Booting worker with pid: 17
+[2020-02-02 12:56:59 +0000] [18] [INFO] Booting worker with pid: 18
+[2020-02-02 13:04:51 +0000] [16] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 13:04:51 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2020-02-02 13:04:51 +0000] [17] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 13:04:51 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2020-02-02 13:04:51 +0000] [18] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 13:04:52 +0000] [18] [INFO] Worker exiting (pid: 18)
+[2020-02-02 13:04:52 +0000] [21] [INFO] Booting worker with pid: 21
+[2020-02-02 13:04:52 +0000] [22] [INFO] Booting worker with pid: 22
+[2020-02-02 13:04:54 +0000] [21] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 13:04:54 +0000] [21] [INFO] Worker exiting (pid: 21)
+[2020-02-02 13:04:54 +0000] [22] [INFO] Worker reloading: /app/app/app.py modified
+[2020-02-02 13:04:54 +0000] [22] [INFO] Worker exiting (pid: 22)
+[2020-02-02 13:04:54 +0000] [23] [INFO] Booting worker with pid: 23
+[2020-02-02 13:04:55 +0000] [24] [INFO] Booting worker with pid: 24
+[2020-02-02 13:04:55 +0000] [25] [INFO] Booting worker with pid: 25
+[2020-02-02 13:13:43 +0000] [24] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 13:13:43 +0000] [24] [INFO] Worker exiting (pid: 24)
+[2020-02-02 13:13:43 +0000] [25] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 13:13:43 +0000] [25] [INFO] Worker exiting (pid: 25)
+[2020-02-02 13:13:43 +0000] [23] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 13:13:43 +0000] [23] [INFO] Worker exiting (pid: 23)
+[2020-02-02 13:13:44 +0000] [26] [INFO] Booting worker with pid: 26
+[2020-02-02 13:13:44 +0000] [28] [INFO] Booting worker with pid: 28
+[2020-02-02 13:13:44 +0000] [29] [INFO] Booting worker with pid: 29
+[2020-02-02 13:13:54 +0000] [26] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 13:13:54 +0000] [26] [INFO] Worker exiting (pid: 26)
+[2020-02-02 13:13:54 +0000] [28] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 13:13:54 +0000] [28] [INFO] Worker exiting (pid: 28)
+[2020-02-02 13:13:54 +0000] [29] [INFO] Worker reloading: /app/app/search.py modified
+[2020-02-02 13:13:54 +0000] [29] [INFO] Worker exiting (pid: 29)
+[2020-02-02 13:13:55 +0000] [30] [INFO] Booting worker with pid: 30
+[2020-02-02 13:13:55 +0000] [31] [INFO] Booting worker with pid: 31
+[2020-02-02 13:13:55 +0000] [32] [INFO] Booting worker with pid: 32
+[2020-02-02 13:21:22 +0000] [9] [INFO] Starting gunicorn 20.0.4
+[2020-02-02 13:21:22 +0000] [9] [INFO] Listening at: http://0.0.0.0:7777 (9)
+[2020-02-02 13:21:22 +0000] [9] [INFO] Using worker: gevent
+[2020-02-02 13:21:22 +0000] [16] [INFO] Booting worker with pid: 16
+[2020-02-02 13:21:22 +0000] [17] [INFO] Booting worker with pid: 17
+[2020-02-02 13:21:22 +0000] [18] [INFO] Booting worker with pid: 18
+[2020-02-02 13:30:31 +0000] [17] [ERROR] Error handling request /api/v2/preds/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/app/app/app.py", line 90, in task_processing_themes_processing_v3
+    get_text = req['text']
+KeyError: 'text'

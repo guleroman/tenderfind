@@ -11,6 +11,9 @@ from read_write import readData
 from speller import Speller, Sinonims
 morph = pymorphy2.MorphAnalyzer()
 
+global rules
+rules = pd.read_pickle('../test_data/rules.pkl')
+
 global data
 data = pd.read_excel('../test_data/data.xlsx')
 
@@ -251,3 +254,12 @@ def get_similar_tovar_v3(class_p=None,class_t=None,texts=None):
 #     return_data = similar_tovar.fillna('-1').to_dict("records")
 #     print("--- %s seconds ---" % (time.time() - start_time))
 #     return({"class_p":my_class_p,"class_t":my_class_t,"payload":return_data})
+
+
+def get_preds(text):
+    print(text)
+    preds = rules[rules['consequents'].values == frozenset({f'{text}'})]
+    a = preds['antecedents'].values
+    b = list(map(lambda x: list(x)[0], a))
+    print(b)
+    return({"preds":b})

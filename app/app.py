@@ -3,7 +3,7 @@ import requests
 import os
 
 from flask import Flask, jsonify, request, json, make_response
-from search import get_similar_tovar, get_similar_tovar_v2, get_similar_tovar_v3
+from search import get_similar_tovar, get_similar_tovar_v2, get_similar_tovar_v3, get_preds
 import yaml
 from flask_cors import CORS, cross_origin
 
@@ -80,8 +80,22 @@ def task_processing_themes_processing_v2():
         result = get_similar_tovar_v3(texts = get_texts)
         resp = make_response(jsonify({"result":result}))
         return resp
+    
+    
+@app.route('/api/v2/preds/',methods=['POST'])
+@cross_origin(origins="*", methods=['POST','OPTIONS'], allow_headers="*")
+def task_processing_themes_processing_v3():
+    #try:
+    req = json.loads(request.data)
+    get_text = req['text']
+        
+    result = get_preds(get_text)
+    resp = make_response(jsonify({"result":result}))
+    #resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+    #except:
         #except:
-         #   return make_response(jsonify({"_status_code":422,"error":{"info":"incorrect POST-request"}}),422)
+    #    return make_response(jsonify({"_status_code":422,"error":{"info":"incorrect POST-request"}}),422)
 
     
 
