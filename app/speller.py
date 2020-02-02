@@ -11,10 +11,10 @@ def Speller(stroke):
         for co in data:
             if co['s'] != []:
                 stroke = stroke.replace(stroke[co['pos']:co['pos']+co['len']],co['s'][0].lower())
-        return(stroke, status)
+        return(stroke.split(), status)
     except:
         status = 422
-        return (stroke, status)
+        return (stroke.split(), status)
 
 def Sinonims(query):
     try:

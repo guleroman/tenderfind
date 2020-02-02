@@ -3,7 +3,7 @@ import requests
 import os
 
 from flask import Flask, jsonify, request, json, make_response
-from search import get_similar_tovar, get_similar_tovar_v2
+from search import get_similar_tovar, get_similar_tovar_v2, get_similar_tovar_v3
 import yaml
 from flask_cors import CORS, cross_origin
 
@@ -59,23 +59,31 @@ def task_processing_themes_processing_v2():
     try:
         req = json.loads(request.data)
         get_text = req['text']
-    except:
-        return make_response(jsonify({"_status_code":422,"error":{"info":"incorrect POST-request"}}),422)
+        try:
+            class_p = req['class_p']
+        except:
+            class_p = None
 
-    try:
-        class_p = req['class_p']
+        try:
+            class_t = req['class_t']
+        except:
+            class_t = None
+
+        result = get_similar_tovar_v2(class_p=class_p, class_t=class_t, text = get_text)
+        resp = make_response(jsonify({"result":result})) 
+        #resp.headers['Access-Control-Allow-Origin'] = '*'
+        return resp
     except:
-        class_p = None
+        #try:
+        get_text = None
+        get_texts = req['texts']
+        result = get_similar_tovar_v3(texts = get_texts)
+        resp = make_response(jsonify({"result":result}))
+        return resp
+        #except:
+         #   return make_response(jsonify({"_status_code":422,"error":{"info":"incorrect POST-request"}}),422)
+
     
-    try:
-        class_t = req['class_t']
-    except:
-        class_t = None
-    
-    result = get_similar_tovar_v2(class_p=class_p, class_t=class_t, text = get_text)
-    resp = make_response(jsonify({"result":result})) 
-    #resp.headers['Access-Control-Allow-Origin'] = '*'
-    return resp
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7777)
