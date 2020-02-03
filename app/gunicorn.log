@@ -742,3 +742,40 @@ Traceback (most recent call last):
   File "/app/app/app.py", line 90, in task_processing_themes_processing_v3
     get_text = req['text']
 KeyError: 'text'
+[2020-02-02 13:38:46 +0000] [16] [ERROR] Error handling request /api/v2/preds/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 55, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 143, in handle_request
+    super().handle_request(listener_name, req, sock, addr)
+  File "/usr/local/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 106, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/app/app/app.py", line 90, in task_processing_themes_processing_v3
+    get_text = req['text']
+KeyError: 'text'
